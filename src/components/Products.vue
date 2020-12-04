@@ -65,11 +65,15 @@ export default defineComponent({
 
         const addProduct = () => {
             const newProduct = generateProduct()
-            reduxStore.dispatch(productApi.endpoints.addProduct.initiate(newProduct))
+            /**
+             * without specifying { track: false }, this will generate a subscription and 
+             * keep the return value in the store until unsubscribed
+             **/
+            reduxStore.dispatch(productApi.endpoints.addProduct.initiate(newProduct, {track: false}))
         }
 
         const deleteProduct = (id: number) => {
-            reduxStore.dispatch(productApi.endpoints.deleteProduct.initiate(id))
+            reduxStore.dispatch(productApi.endpoints.deleteProduct.initiate(id, {track: false}))
         }
 
         const updateProduct = (product: Product) => {
@@ -77,7 +81,7 @@ export default defineComponent({
                 id: product.id,
                 ...generateProduct()
             }
-            reduxStore.dispatch(productApi.endpoints.updateProduct.initiate(updatedProduct))
+            reduxStore.dispatch(productApi.endpoints.updateProduct.initiate(updatedProduct, {track: false}))
         }
 
         return {

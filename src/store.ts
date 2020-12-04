@@ -21,6 +21,9 @@ export interface StoreSymbolInterface {
 
 const StoreSymbol: InjectionKey<StoreSymbolInterface> = Symbol()
 
+/**
+ * I would suggest renaming this to `provideProducts`, maybe?
+ */
 export function provideStore() {
     const store = ref(reduxStore.getState())
 
@@ -32,9 +35,9 @@ export function provideStore() {
 
     const result = computed(() => productApi.endpoints.getProducts.select()(store.value))
   
-    const isLoading = computed(() => result.value.status === QueryStatus.pending)
-    const error = computed(() => result.value.status === QueryStatus.rejected)
-    const data = computed(() => result.value.data)
+  // this is already on there :)
+  const isLoading = computed(() => result.value.isLoading);
+  const error = computed(() => result.value.isError);
 
     onUnmounted(() => {
         unsubscribeStore()
@@ -49,6 +52,9 @@ export function provideStore() {
     })
 }
 
+/**
+ * I would suggest renaming this to `useProducts`, maybe?
+ */
 export function useStore() {
     const store = inject(StoreSymbol)
     if (!store) {
