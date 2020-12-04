@@ -6,7 +6,7 @@ const products: Product[] = [
     {
       "id": 27591,
       "name": "Handmade Frozen Bacon",
-      "price": "166.00",
+      "price": 166.00,
       "department": "Industrial",
       "status": "instock",
       "rating": 5
@@ -14,7 +14,7 @@ const products: Product[] = [
     {
       "id": 92271,
       "name": "Gorgeous Frozen Ball",
-      "price": "136.00",
+      "price": 136.00,
       "department": "Clothing",
       "status": "lowstock",
       "rating": 4
@@ -22,7 +22,7 @@ const products: Product[] = [
     {
       "id": 6009,
       "name": "Practical Rubber Computer",
-      "price": "388.00",
+      "price": 388.00,
       "department": "Toys",
       "status": "outofstock",
       "rating": 3
@@ -30,7 +30,7 @@ const products: Product[] = [
     {
       "id": 39632,
       "name": "Handcrafted Steel Tuna",
-      "price": "240.00",
+      "price": 240.00,
       "department": "Kids",
       "status": "instock",
       "rating": 2
@@ -38,7 +38,7 @@ const products: Product[] = [
     {
       "id": 67269,
       "name": "Incredible Concrete Pants",
-      "price": "402.00",
+      "price": 402.00,
       "department": "Electronics",
       "status": "instock",
       "rating": 3
@@ -46,7 +46,7 @@ const products: Product[] = [
     {
       "id": 26773,
       "name": "Incredible Wooden Salad",
-      "price": "747.00",
+      "price": 747.00,
       "department": "Games",
       "status": "outofstock",
       "rating": 3
@@ -54,7 +54,7 @@ const products: Product[] = [
     {
       "id": 86709,
       "name": "Generic Wooden Soap",
-      "price": "998.00",
+      "price": 998.00,
       "department": "Outdoors",
       "status": "lowstock",
       "rating": 3
@@ -62,7 +62,7 @@ const products: Product[] = [
     {
       "id": 67294,
       "name": "Awesome Rubber Ball",
-      "price": "995.00",
+      "price": 995.00,
       "department": "Computers",
       "status": "lowstock",
       "rating": 3
@@ -70,7 +70,7 @@ const products: Product[] = [
     {
       "id": 4082,
       "name": "Ergonomic Wooden Chicken",
-      "price": "621.00",
+      "price": 621.00,
       "department": "Home",
       "status": "instock",
       "rating": 1
@@ -78,7 +78,7 @@ const products: Product[] = [
     {
       "id": 16978,
       "name": "Practical Concrete Hat",
-      "price": "893.00",
+      "price": 893.00,
       "department": "Kids",
       "status": "lowstock",
       "rating": 3
@@ -86,7 +86,7 @@ const products: Product[] = [
     {
       "id": 66349,
       "name": "Generic Steel Gloves",
-      "price": "896.00",
+      "price": 896.00,
       "department": "Toys",
       "status": "outofstock",
       "rating": 5
@@ -94,7 +94,7 @@ const products: Product[] = [
     {
       "id": 63278,
       "name": "Handmade Fresh Hat",
-      "price": "362.00",
+      "price": 362.00,
       "department": "Toys",
       "status": "lowstock",
       "rating": 4

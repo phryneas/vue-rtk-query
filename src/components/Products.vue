@@ -17,6 +17,7 @@
                     </div>
                 </div>
             </template>
+            <Column field="id" header="ID"></Column>
             <Column field="name" header="Name" :sortable="true"></Column>
             <Column field="price" header="Price" :sortable="true">
                 <template #body="slotProps">
@@ -49,10 +50,9 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import faker from 'faker'
 
 import { reduxStore, useStore } from '@/store'
-import { getTagColor, formatCurrency } from '@/utils'
+import { getTagColor, formatCurrency, generateProduct } from '@/utils'
 import { Product, productApi } from '@/services/product'
 
 export default defineComponent({
@@ -61,14 +61,7 @@ export default defineComponent({
         const filters = ref({})
 
         const addProduct = () => {
-            const newProduct: Omit<Product, 'id'> = {
-                name: faker.commerce.productName(),
-                price: faker.commerce.price(),
-                department: faker.commerce.department(),
-                status: faker.random.arrayElement(['instock', 'lowstock', 'outofstock']),
-                rating: faker.random.number({ min: 1, max: 5 })
-            }
-
+            const newProduct = generateProduct()
             reduxStore.dispatch(productApi.endpoints.addProduct.initiate(newProduct))
         }
 
@@ -78,10 +71,8 @@ export default defineComponent({
 
         const updateProduct = (product: Product) => {
             const updatedProduct = {
-                ...product,
-                price: faker.commerce.price(),
-                rating: faker.random.number({ min: 1, max: 5 }),
-                status: faker.random.arrayElement(['instock', 'lowstock', 'outofstock'])
+                id: product.id,
+                ...generateProduct()
             }
             reduxStore.dispatch(productApi.endpoints.updateProduct.initiate(updatedProduct))
         }

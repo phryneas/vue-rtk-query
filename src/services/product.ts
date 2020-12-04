@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@rtk-incubator/rtk-query'
 export interface Product { 
   id: number
   name: string
-  price: string
+  price: number
   department: string
   status: string
   rating: number
