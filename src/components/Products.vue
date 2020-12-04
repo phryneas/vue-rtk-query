@@ -49,9 +49,10 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
+import faker from 'faker'
+
 import { reduxStore, useStore } from '@/store'
 import { getTagColor, formatCurrency } from '@/utils'
-import faker from 'faker'
 import { Product, productApi } from '@/services/product'
 
 export default defineComponent({

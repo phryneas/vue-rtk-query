@@ -1,7 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { ProductResponse, productApi } from './services/product'
-import { QueryStatus } from '@rtk-incubator/rtk-query'
+
 import { computed, inject, onUnmounted, provide, InjectionKey, ref, ComputedRef } from 'vue'
+import { configureStore } from '@reduxjs/toolkit'
+import { QueryStatus } from '@rtk-incubator/rtk-query'
+
+import { ProductResponse, productApi } from '@/services/product'
 
 export const reduxStore = configureStore({
     reducer: {

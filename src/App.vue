@@ -6,8 +6,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { provideStore } from './store'
+
 import Products from './components/Products.vue'
+import { provideStore } from './store'
 
 export default defineComponent({
   name: 'App',
