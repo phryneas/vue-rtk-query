@@ -116,7 +116,6 @@ export const handlers = [
             id: faker.random.number(),
             ...req.body
         }
-
         products.push(newProduct)
 
         return res(
@@ -132,10 +131,7 @@ export const handlers = [
           id: Number(id),
           ...req.body
       }
-
-      console.log(req.body, req.params)
       const prodIndex = products.findIndex(i => i.id === Number(id))
-      console.log(prodIndex)
       products[prodIndex] = updatedProduct
 
       return res(
