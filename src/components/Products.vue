@@ -4,7 +4,7 @@
     </div>
     <div v-else>
         <Button icon="pi pi-plus" label="Add Random Product" @click="addProduct" style="margin-bottom: 20px;" />
-        <DataTable :value="data.products" :loading="isLoading" class="p-datatable-sm" :filters="filters">
+        <DataTable :value="data.products" :loading="isLoading" class="p-datatable-sm" :filters="filters" removableSort>
             <template #header>
                 <div class="table-header">
                     <span>Manage Products</span>
@@ -41,6 +41,9 @@
                     <Button style="margin-left: 10px;" icon="pi pi-trash" class="p-button-rounded p-button-danger" @click="deleteProduct(slotProps.data.id)" />
                 </template>
             </Column>
+            <template #empty>
+                No products found.
+            </template>
             <template #footer>
                 In total there are {{data.products ? data.products.length : 0 }} products.
             </template>
@@ -57,7 +60,7 @@ import { Product, productApi } from '@/services/product'
 
 export default defineComponent({
     setup() {
-        const { data, error, isLoading, refetch } = useStore() as any
+        const { data, error, isLoading, refetch } = useStore()
         const filters = ref({})
 
         const addProduct = () => {

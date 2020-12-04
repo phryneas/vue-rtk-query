@@ -50,5 +50,9 @@ export function provideStore() {
 }
 
 export function useStore() {
-    return inject(StoreSymbol)
+    const store = inject(StoreSymbol)
+    if (!store) {
+        throw new Error('Store error')
+    }
+    return store
 }
